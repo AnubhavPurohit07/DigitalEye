@@ -4,3 +4,12 @@ target/
 *.iml
 .vscode/
 .DS_Store
+
+# other modules live on their own branches
+digitaleye-database/
+digitaleye-backend/
+digitaleye-dashboard/
+classpath.txt
+
+# local login settings - never commit
+src/main/resources/agent.properties
