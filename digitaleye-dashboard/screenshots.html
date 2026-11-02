@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DigitalEye &mdash; Screenshots</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/extra.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main">
+        <div class="topbar">
+            <div>
+                <h1>Screenshots</h1>
+                <p class="subtitle">Take a screenshot of a computer on demand, browse the ones already taken, or replay a day in order.</p>
+            </div>
+            <div class="topbar-right">
+                <div class="pill" id="todayPill">&#128197; &nbsp;Loading date...</div>
+                <a class="pill" href="alerts.html" title="Open alerts">&#128276; <span id="alertBadgeCount">0</span></a>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="filter-bar">
+                <div class="field">
+                    <label for="sSystem">System</label>
+                    <select id="sSystem" class="form-input"></select>
+                </div>
+                <div class="field">
+                    <label for="sDate">Day</label>
+                    <input type="date" id="sDate" class="form-input">
+                </div>
+                <div class="field" style="flex-direction:row; gap:8px;">
+                    <button class="btn primary" id="sTake" title="Ask the agent on the selected computer for a screenshot now">&#128247; Take Screenshot</button>
+                    <button class="btn" id="sRefresh">&#8635; Refresh</button>
+                    <button class="btn" id="sReplay" disabled>&#9654; Replay this day</button>
+                </div>
+            </div>
+            <p class="panel-sub" id="sInfo">Loading...</p>
+
+            <div class="thumb-grid" id="thumbGrid"></div>
+
+            <div class="pager" style="justify-content:center;">
+                <button class="btn" id="moreBtn" style="display:none;">Show more</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Full-size viewer, used both for opening one screenshot and for replaying a whole day -->
+<div class="viewer-backdrop" id="viewerBackdrop">
+    <div class="viewer">
+        <div class="viewer-top">
+            <div class="viewer-caption" id="viewerCaption"></div>
+            <button class="viewer-close" id="viewerClose">&#10005; Close (Esc)</button>
+        </div>
+        <div class="viewer-stage">
+            <span class="loading" id="viewerLoading">Loading...</span>
+            <img id="viewerImg" alt="Screenshot" style="display:none;">
+        </div>
+        <div class="viewer-controls">
+            <button id="vPrev" title="Previous (Left arrow)">&#9198;</button>
+            <button id="vPlay" title="Play / pause (Space)">&#9654; Play</button>
+            <button id="vNext" title="Next (Right arrow)">&#9197;</button>
+            <select id="vSpeed" title="Replay speed">
+                <option value="1">1&times;</option>
+                <option value="2">2&times;</option>
+                <option value="4">4&times;</option>
+                <option value="8">8&times;</option>
+            </select>
+            <input type="range" id="vSlider" min="0" max="0" value="0">
+            <span class="counter" id="vCounter"></span>
+        </div>
+    </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/common.js"></script>
+<script src="js/screenshots.js"></script>
+</body>
+</html>
