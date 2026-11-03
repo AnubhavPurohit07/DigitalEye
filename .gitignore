@@ -1,15 +1,22 @@
+# Build output
 target/
 *.class
+
+# IDE files (the shared VS Code tasks are kept)
 .idea/
 *.iml
-.vscode/
 .DS_Store
+.vscode/*
+!.vscode/tasks.json
+!.vscode/extensions.json
 
-# other modules live on their own branches
-digitaleye-database/
-digitaleye-backend/
-digitaleye-dashboard/
+# PRIVATE settings - these hold passwords. Never commit them.
+# Only the *.example templates are committed.
+db.properties
+agent.properties
+register*.json
+
+# Runtime data created while the system runs
+digitaleye-backend/screenshots/
+*.log
 classpath.txt
-
-# local login settings - never commit
-src/main/resources/agent.properties

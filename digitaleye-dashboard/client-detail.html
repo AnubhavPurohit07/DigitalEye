@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DigitalEye &mdash; Client Detail</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/extra.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main">
+        <div class="breadcrumb">
+            <a href="dashboard.html">Dashboard</a><span class="sep">&rsaquo;</span>
+            <a href="dashboard.html#systems">Client Systems</a><span class="sep">&rsaquo;</span>
+            <span id="breadcrumbName">Loading...</span>
+        </div>
+
+        <div id="pageError" class="banner info" style="display:none;"></div>
+
+        <div class="detail-header">
+            <div class="detail-person">
+                <div class="detail-avatar" id="detailAvatar">?</div>
+                <div>
+                    <h1 id="detailName">Loading...</h1>
+                    <p class="role-line" id="detailRole">Monitored workstation</p>
+                    <div class="meta-line">
+                        <span id="detailStatus">&mdash;</span>
+                        <span id="detailLastActive">&mdash;</span>
+                        <span id="detailMonitoringSince">&mdash;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-actions">
+                <label class="date-control">Day <input type="date" id="datePicker" class="form-input"></label>
+                <button class="btn" id="reportBtn">&#128196; Generate Report</button>
+                <button class="btn primary" id="takeShotBtn" title="Ask the agent on this computer for a screenshot now">&#128247; Take Screenshot</button>
+                <a class="btn" id="screensLink" href="screenshots.html" style="text-decoration:none;">&#128250; View Screenshots</a>
+                <button class="btn" onclick="location.href='dashboard.html'">&larr; Back to Client List</button>
+            </div>
+        </div>
+
+        <div class="kpi-grid" id="kpiGrid"></div>
+
+        <div class="content-grid">
+            <div>
+                <div class="panel" style="margin-bottom:16px;">
+                    <div class="panel-header"><h2>Activity Timeline</h2></div>
+                    <div class="hchart" id="timelineChart"></div>
+                    <div class="hchart-labels" id="timelineLabels"></div>
+                    <div class="legend-row wide" data-category-legend></div>
+                </div>
+
+                <div class="panel" style="margin-bottom:16px;">
+                    <div class="panel-header"><h2>Recent Screenshots</h2><a class="panel-link" id="allShotsLink" href="screenshots.html">View All &rarr;</a></div>
+                    <div class="thumb-grid" id="shotGrid"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="panel" style="margin-bottom:16px;">
+                    <div class="panel-header"><h2>Productivity Analysis</h2></div>
+                    <div class="donut-wrap">
+                        <svg id="donutSvg" width="140" height="140" viewBox="0 0 140 140"></svg>
+                        <div class="donut-legend" id="donutLegend"></div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header"><h2>Activity Summary</h2></div>
+                    <div class="summary-grid" id="summaryGrid"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-grid section-gap">
+            <div class="panel">
+                <div class="panel-header"><h2>Application Usage</h2></div>
+                <table>
+                    <thead><tr><th>Application</th><th>Time Spent</th><th>Share of active time</th></tr></thead>
+                    <tbody id="usageTableBody"></tbody>
+                </table>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header"><h2>Recent Activity Logs</h2><a class="panel-link" id="allLogsLink" href="activity-logs.html">View All &rarr;</a></div>
+                <table>
+                    <thead><tr><th>Time</th><th>Application</th><th>Activity</th><th>Category</th><th>Duration</th></tr></thead>
+                    <tbody id="logsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/common.js"></script>
+<script src="js/client-detail.js"></script>
+</body>
+</html>
