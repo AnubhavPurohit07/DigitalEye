@@ -1,5 +1,0 @@
-# Copy this file to db.properties and put your own MySQL password in it.
-# (scripts\setup.cmd does this for you.) db.properties is ignored by git - never commit it.
-db.url=jdbc:mysql://localhost:3306/digitaleye
-db.username=root
-db.password=CHANGE_ME
