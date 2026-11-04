@@ -1,0 +1,14 @@
+target/
+*.class
+.idea/
+*.iml
+.vscode/
+.DS_Store
+# Ignore local configuration and credentials
+src/main/resources/agent.properties
+digitaleye-backend/src/main/resources/application.properties
+digitaleye-backend/src/main/resources/db.properties
+digitaleye-database/src/main/resources/db.properties
+
+# Ignore generated screenshots
+digitaleye-backend/screenshots/
